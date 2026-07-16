@@ -1,0 +1,19 @@
+name: Atividade 02.3 - Utilizando variáveis
+
+on:
+  push:
+
+env:
+  CURSO: Integração Contínua
+
+jobs:
+  exibir-variaveis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exibir informações
+        run: |
+          echo "Curso: $CURSO"
+          echo "Usuário que executou o workflow: $GITHUB_ACTOR"
+          echo "Repositório: $GITHUB_REPOSITORY"
+          echo "Branch utilizada: $GITHUB_REF_NAME"
