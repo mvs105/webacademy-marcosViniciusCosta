@@ -1,4 +1,4 @@
-name: Atividade 02.2 - Novas etapas
+name: Atividade 2.2 - Novas Etapas
 
 on:
   push:
@@ -6,24 +6,21 @@ on:
 jobs:
   executar-etapas:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Exibir data e hora
+      - name: Exibir data e hora da execucao
         run: date
 
-      - name: Exibir sistema operacional
-        run: |
-          echo "Sistema operacional informado pelo runner: $RUNNER_OS"
-          uname -a
+      - name: Exibir sistema operacional do runner
+        run: echo "O SO utilizado e o $RUNNER_OS"
 
-      - name: Exibir versão do Git
+      - name: Exibir versao do Git
         run: git --version
 
-      - name: Exibir conteúdo do README
+      - name: Exibir conteudo do README.md
         run: cat README.md
 
-      - name: Listar novamente os arquivos
+      - name: Listar arquivos novamente
         run: ls -la
