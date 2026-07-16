@@ -12,7 +12,7 @@ jobs:
       - name: Data e hora da execução
         run: date
       - name: Sistema operacional do runner
-        run: echo "Runner OS: ${{ runner.os }}" && uname -a
+        run: echo "Sistema operacional informado pelo runner" && uname -a
       - name: Versão do Git
         run: git --version
       - name: Conteúdo do README
@@ -21,3 +21,5 @@ jobs:
         run: ls ${{ github.workspace }}
       - name: Status
         run: echo "Status ${{ job.status }}."
+
+        name: Atividade 02.2 - Novas etapas
