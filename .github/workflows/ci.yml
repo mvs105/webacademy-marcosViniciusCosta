@@ -17,7 +17,7 @@ jobs:
         run: git --version
       - name: Conteúdo do README
         run: cat README.md
-      - name: Lista arquivos inicial
+      - name: Lista arquivos inicial 
         run: ls ${{ github.workspace }}
       - name: Status
         run: echo "Status ${{ job.status }}."
