@@ -1,25 +1,29 @@
-name: Atividade 02.2 – Acrescentando novas etapas ao workflow
+name: Atividade 02.2 - Novas etapas
 
 on:
   push:
+
 jobs:
-  primeiro-job:
+  executar-etapas:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "Primeiro passo"
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Data e hora da execução
-        run: date
-      - name: Sistema operacional do runner
-        run: echo "Sistema operacional informado pelo runner" && uname -a
-      - name: Versão do Git
-        run: git --version
-      - name: Conteúdo do README
-        run: cat README.md
-      - name: Lista arquivos inicial 
-        run: ls ${{ github.workspace }}
-      - name: Status
-        run: echo "Status ${{ job.status }}."
 
-        name: Atividade 02.2 - Novas etapas
+      - name: Exibir data e hora
+        run: date
+
+      - name: Exibir sistema operacional
+        run: |
+          echo "Sistema operacional informado pelo runner: $RUNNER_OS"
+          uname -a
+
+      - name: Exibir versão do Git
+        run: git --version
+
+      - name: Exibir conteúdo do README
+        run: cat README.md
+
+      - name: Listar novamente os arquivos
+        run: ls -la
